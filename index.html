@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcketplace — Tienda en línea</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">🛍️ Marcketplace</a>
+    <input id="search" type="search" placeholder="Buscar productos..." aria-label="Buscar productos" />
+    <button id="cart-btn" class="cart-btn" aria-label="Abrir carrito">
+      🛒 Carrito <span id="cart-count" class="badge">0</span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <h1>Todo lo que necesitas, en un solo lugar</h1>
+    <p>Envío gratis en compras mayores a $50.</p>
+  </section>
+
+  <main class="container">
+    <div class="toolbar">
+      <div id="categories" class="categories"></div>
+      <select id="sort" aria-label="Ordenar">
+        <option value="relevancia">Relevancia</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+        <option value="rating">Mejor valorados</option>
+      </select>
+    </div>
+    <p id="empty" class="empty" hidden>No se encontraron productos.</p>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Tu carrito</h2>
+      <button id="cart-close" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <ul id="cart-items" class="cart-items"></ul>
+    <div class="cart-footer">
+      <div class="row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <div class="row"><span>Envío</span><span id="shipping">$0.00</span></div>
+      <div class="row total"><span>Total</span><span id="total">$0.00</span></div>
+      <button id="checkout" class="primary" disabled>Finalizar compra</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <footer class="footer">© <span id="year"></span> Marcketplace · Hecho con HTML, CSS y JavaScript</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
